@@ -118,4 +118,23 @@ public class Wordsdao {
         }
         return wordsArrayList;
     }
+
+    //For search keyword
+
+    public ArrayList<Words> searchWord(DatabaseHelp db, String keyWord){
+        ArrayList<Words> wordsArrayList = new ArrayList<>();
+        SQLiteDatabase dbx = db.getWritableDatabase();
+
+        Cursor c = dbx.rawQuery("SELECT * FROM words WHERE english LIKE '%" + keyWord + "%'", null);
+
+        while (c.moveToNext())
+        {
+            Words word = new Words(c.getInt(c.getColumnIndex("word_id")),
+                    c.getString(c.getColumnIndex("english")),
+                    c.getString(c.getColumnIndex("turkish")));
+
+            wordsArrayList.add(word);
+        }
+        return wordsArrayList;
+    }
 }
