@@ -48,12 +48,19 @@ public class MainActivity extends AppCompatActivity {
         Words word = new Wordsdao().wordComing(db,5);
         Log.e("5. word: ", word.getWord_id()+" - "+word.getEnglish()+" - "+word.getTurkish());
 
+        ArrayList<Words> random = new Wordsdao().rondomWord(db);
+
+        for(Words w:random)
+        {
+            Log.e(String.valueOf(w.getWord_id()), w.getEnglish()+"-"+w.getTurkish());
+        }
+
         //We receive all the words we send
-        ArrayList<Words> incomingWordList = new Wordsdao().allWords(db);
+        /*ArrayList<Words> incomingWordList = new Wordsdao().allWords(db);
 
         for(Words w:incomingWordList)
         {
             Log.e(String.valueOf(w.getWord_id()), w.getEnglish()+"-"+w.getTurkish());
-        }
+        }*/
     }
 }

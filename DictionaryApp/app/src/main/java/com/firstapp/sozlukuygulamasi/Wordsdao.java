@@ -101,4 +101,21 @@ public class Wordsdao {
 
         return words;
     }
+
+    public ArrayList<Words> rondomWord(DatabaseHelp db){
+        ArrayList<Words> wordsArrayList = new ArrayList<>();
+        SQLiteDatabase dbx = db.getWritableDatabase();
+
+        Cursor c = dbx.rawQuery("SELECT*FROM words ORDER BY RANDOM() LIMIT 5",null);
+
+        while (c.moveToNext())
+        {
+            Words word = new Words(c.getInt(c.getColumnIndex("word_id")),
+                    c.getString(c.getColumnIndex("english")),
+                    c.getString(c.getColumnIndex("turkish")));
+
+            wordsArrayList.add(word);
+        }
+        return wordsArrayList;
+    }
 }
