@@ -83,5 +83,22 @@ public class Wordsdao {
         return result;
     }
 
+    //Only one record
+    public Words wordComing(DatabaseHelp db, int word_id)
+    {
+        Words words = new Words();
 
+        SQLiteDatabase dbx = db.getWritableDatabase();
+        Cursor c = dbx.rawQuery("SELECT * FROM words WHERE word_id="+word_id,null);
+
+        while (c.moveToNext()){
+            Words w = new Words(c.getInt(c.getColumnIndex("word_id"))
+                    ,c.getString(c.getColumnIndex("english"))
+                    ,c.getString(c.getColumnIndex("turkish")));
+
+            words = w;
+        }
+
+        return words;
+    }
 }

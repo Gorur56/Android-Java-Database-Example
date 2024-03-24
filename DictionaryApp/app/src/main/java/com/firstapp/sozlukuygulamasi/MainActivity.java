@@ -45,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         int result = new Wordsdao().recordControl(db);
         Log.e("Veri Sayısı: ",String.valueOf(result));
 
+        Words word = new Wordsdao().wordComing(db,5);
+        Log.e("5. word: ", word.getWord_id()+" - "+word.getEnglish()+" - "+word.getTurkish());
+
         //We receive all the words we send
         ArrayList<Words> incomingWordList = new Wordsdao().allWords(db);
 
