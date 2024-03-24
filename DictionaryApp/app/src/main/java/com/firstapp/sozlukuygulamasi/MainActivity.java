@@ -36,10 +36,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         //for delete
-        //new Wordsdao().wordDelete(db,1);
+        //new Wordsdao().wordDelete(db,2);
 
         //for update
-        new Wordsdao().wordUpdate(db,6, "hello","merhaba");
+       //new Wordsdao().wordUpdate(db,6, "hello","merhaba");
+
+        //For select count
+        int result = new Wordsdao().recordControl(db);
+        Log.e("Veri Sayısı: ",String.valueOf(result));
 
         //We receive all the words we send
         ArrayList<Words> incomingWordList = new Wordsdao().allWords(db);

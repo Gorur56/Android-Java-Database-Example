@@ -67,4 +67,21 @@ public class Wordsdao {
         dbx.update("words",values,"word_id=?",new String[]{String.valueOf(word_id)});
         dbx.close();
     }
+
+    public int recordControl(DatabaseHelp db)
+    {
+        int result = 0;
+
+        SQLiteDatabase dbx = db.getWritableDatabase();
+        Cursor c = dbx.rawQuery("SELECT count(*) as sonuc FROM words",null);
+
+        while (c.moveToNext())
+        {
+            result= c.getInt(c.getColumnIndex("sonuc"));
+        }
+
+        return result;
+    }
+
+
 }
