@@ -36,8 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         //for delete
+        //new Wordsdao().wordDelete(db,1);
 
-
+        //for update
+        new Wordsdao().wordUpdate(db,6, "hello","merhaba");
 
         //We receive all the words we send
         ArrayList<Words> incomingWordList = new Wordsdao().allWords(db);
