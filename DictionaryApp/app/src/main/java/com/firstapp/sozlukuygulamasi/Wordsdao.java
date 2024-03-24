@@ -40,5 +40,6 @@ public class Wordsdao {
 
             wordsArrayList.add(word);
         }
+        return wordsArrayList;
     }
 }
