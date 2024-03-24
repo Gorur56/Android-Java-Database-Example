@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.provider.SearchRecentSuggestions;
 import android.provider.UserDictionary;
 
 import java.util.ArrayList;
@@ -55,5 +56,15 @@ public class Wordsdao {
 
     //we need all values to update the value we want.
 
-    public void wordUpdate(DatabaseHelp db, )
+    public void wordUpdate(DatabaseHelp db, int word_id, String english, String turkish)
+    {
+        SQLiteDatabase dbx = db.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("english",english);
+        values.put("turkish",turkish);
+
+        dbx.update("words",values,"word_id=?",new String[]{String.valueOf(word_id)});
+        dbx.close();
+    }
 }

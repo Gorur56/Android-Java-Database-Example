@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         new Wordsdao().wordAdd(db,"pencil","kalem");*/
 
 
+        //for delete
+
 
 
         //We receive all the words we send
