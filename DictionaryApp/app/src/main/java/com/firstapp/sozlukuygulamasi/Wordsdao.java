@@ -42,4 +42,18 @@ public class Wordsdao {
         }
         return wordsArrayList;
     }
+    //we need word_id to delete the value we want.
+    //If we want to delete words  other then word_id,we add them this way. dbx.delete("words","word_id=? and english=?"
+    //ve diziye ekliyoruz
+    public void wordDelete(DatabaseHelp db,int word_id)
+    {
+        SQLiteDatabase dbx = db.getWritableDatabase();
+
+        dbx.delete("words","word_id=?",new String[]{String.valueOf(word_id)});
+        dbx.close();
+    }
+
+    //we need all values to update the value we want.
+
+    public void wordUpdate(DatabaseHelp db, )
 }

@@ -27,11 +27,14 @@ public class MainActivity extends AppCompatActivity {
 
         db = new DatabaseHelp(this);
 
-        new Wordsdao().wordAdd(db,"door","kapı");
+        //add words
+        /*new Wordsdao().wordAdd(db,"door","kapı");
         new Wordsdao().wordAdd(db,"window","pencere");
         new Wordsdao().wordAdd(db,"sea","deniz");
         new Wordsdao().wordAdd(db,"table","masa");
-        new Wordsdao().wordAdd(db,"pencil","kalem");
+        new Wordsdao().wordAdd(db,"pencil","kalem");*/
+
+
 
 
         //We receive all the words we send
