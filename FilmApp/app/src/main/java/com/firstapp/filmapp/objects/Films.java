@@ -1,6 +1,6 @@
 package com.firstapp.filmapp.objects;
 
-public class Filmler {
+public class Films {
     private int film_id;
     private String film_name;
     private int film_year;
@@ -8,10 +8,10 @@ public class Filmler {
     private Categories category;
     private Directors director;
 
-    public Filmler() {
+    public Films() {
     }
 
-    public Filmler(int film_id, String film_name, int film_year, String film_image, Categories category, Directors director) {
+    public Films(int film_id, String film_name, int film_year, String film_image, Categories category, Directors director) {
         this.film_id = film_id;
         this.film_name = film_name;
         this.film_year = film_year;
