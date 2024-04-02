@@ -43,6 +43,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        //tabloları oluşturmadan upgrate etmemiz gerekiyor.
+        db.execSQL("DROP TABLE IF EXISTS categories");
+        db.execSQL("DROP TABLE IF EXISTS directors");
+        db.execSQL("DROP TABLE IF EXISTS films");
+        onCreate(db);
     }
 }
