@@ -10,7 +10,7 @@ import com.firstapp.filmapp.objects.Films;
 import java.util.ArrayList;
 
 public class Filmsdao {
-    public ArrayList<Films> allCategories(DatabaseHelper dbh)
+    public ArrayList<Films> allFilms(DatabaseHelper dbh)
     {
         ArrayList<Films> filmsArrayList = new ArrayList<>();
         SQLiteDatabase db = dbh.getWritableDatabase();

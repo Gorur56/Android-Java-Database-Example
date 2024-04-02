@@ -12,7 +12,9 @@ import androidx.core.view.WindowInsetsCompat;
 import com.firstapp.filmapp.dao.Categoriesdao;
 import com.firstapp.filmapp.dao.DatabaseCopyHelper;
 import com.firstapp.filmapp.dao.DatabaseHelper;
+import com.firstapp.filmapp.dao.Filmsdao;
 import com.firstapp.filmapp.objects.Categories;
+import com.firstapp.filmapp.objects.Films;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,10 +40,21 @@ public class MainActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
 
-        ArrayList<Categories> categoriesArrayList = new Categoriesdao().allCategories(dbh);
+        ArrayList<Films> filmsArrayList = new Filmsdao().allFilms(dbh);
 
-        for (Categories c: categoriesArrayList) {
-            Log.e(String.valueOf(c.getCategory_id()), c.getCategory_name());
+        for (Films f: filmsArrayList) {
+            Log.e("*******","********");
+            Log.e("Film id",String.valueOf(f.getFilm_id()));
+            Log.e("*******","********");
+            Log.e("Film name",String.valueOf(f.getFilm_name()));
+            Log.e("*******","********");
+            Log.e("Film year",String.valueOf(f.getFilm_year()));
+            Log.e("*******","********");
+            Log.e("Film image",String.valueOf(f.getFilm_image()));
+            Log.e("*******","********");
+            Log.e("Film category",String.valueOf(f.getCategory().getCategory_id()));
+            Log.e("*******","********");
+            Log.e("Film director",String.valueOf(f.getDirector().getDirector_id()));
         }
     }
 
