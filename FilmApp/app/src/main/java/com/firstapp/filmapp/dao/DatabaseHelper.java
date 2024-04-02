@@ -47,6 +47,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS categories");
         db.execSQL("DROP TABLE IF EXISTS directors");
         db.execSQL("DROP TABLE IF EXISTS films");
-        onCreate(db);
+
     }
 }

@@ -23,5 +23,7 @@ public class Categoriesdao {
 
             categoriesArrayList.add(categories);
         }
+
+        return categoriesArrayList;
     }
 }
