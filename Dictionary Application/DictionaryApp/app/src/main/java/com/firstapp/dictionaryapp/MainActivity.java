@@ -13,11 +13,16 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.MenuItemCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
     private Toolbar toolbar;
     private RecyclerView rv;
+    private ArrayList<Words> wordsList;
+    private WordsAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +39,32 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         //We connected the menu to the toolbar.
 
         toolbar.setTitle("Dictionary Application ");
-        toolbar.setTitleTextColor(getResources().getColor(R.color.black));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(toolbar);
+
+        rv.setHasFixedSize(true);
+        rv.setLayoutManager(new LinearLayoutManager(this));
+
+        wordsList = new ArrayList<>();
+
+        Words w1 = new Words(1,"Dog","Köpek");
+        Words w2 = new Words(2,"Cat","Kedi");
+        Words w3 = new Words(3,"Tiger","Kaplan");
+        Words w4 = new Words(4,"Lion","Aslan");
+        Words w5 = new Words(5,"Bird","Kuş");
+        Words w6 = new Words(6,"Mouse","Fare");
+
+        wordsList.add(w1);
+        wordsList.add(w2);
+        wordsList.add(w3);
+        wordsList.add(w4);
+        wordsList.add(w5);
+        wordsList.add(w6);
+
+        adapter = new WordsAdapter(this,wordsList);
+
+        //Görebilmemiz için recycle içerisine atmamız gerekiyor.
+        rv.setAdapter(adapter);
     }
 
     @Override
