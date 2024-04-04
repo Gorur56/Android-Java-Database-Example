@@ -1,6 +1,9 @@
 package com.firstapp.dictionaryapp;
 
-public class Words {
+import java.io.Serializable;
+
+public class Words implements Serializable {
+    //Nesneyi taşırken Serializable özelliği gerekiyor.
     private int word_id;
     private String english;
     private String turkish;
