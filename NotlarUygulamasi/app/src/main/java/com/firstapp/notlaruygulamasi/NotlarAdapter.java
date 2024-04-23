@@ -53,12 +53,13 @@ public class NotlarAdapter extends RecyclerView.Adapter<NotlarAdapter.CardTasari
         return notlarList.size();
     }
 
-    public class CardTasarimTutucu extends RecyclerView.ViewHolder {
+    public class CardTasarimTutucu extends RecyclerView.ViewHolder{
         private TextView textViewDers;
         private TextView textViewNot1;
         private TextView textViewNot2;
         private CardView not_card;
-        public cardTasarimTutucu(@NonNull View itemView) {
+
+        public CardTasarimTutucu(View itemView) {
             super(itemView);
             textViewDers = itemView.findViewById(R.id.textViewDers);
             textViewNot1 = itemView.findViewById(R.id.textViewNot1);
