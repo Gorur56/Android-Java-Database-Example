@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private NotlarAdapter adapter;
     private ArrayList<Notlar> notlarArrayList;
+    private Veritabani vt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         rv = findViewById(R.id.rv);
         fab = findViewById(R.id.floatingActionButton);
 
+        vt = new Veritabani(this);
+
         toolbar.setTitle("Not Uygulaması");
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
 
@@ -51,14 +54,16 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        notlarArrayList = new ArrayList<>();
+        /*notlarArrayList = new ArrayList<>();
         Notlar n1 = new Notlar(1,"Tarih",50,70);
         Notlar n2 = new Notlar(2,"Matematik",60,78);
         Notlar n3 = new Notlar(3,"Tarih",45,65);
 
         notlarArrayList.add(n1);
         notlarArrayList.add(n2);
-        notlarArrayList.add(n3);
+        notlarArrayList.add(n3);*/
+
+        notlarArrayList = new NotlarDao().tumNotlar(vt);
 
         adapter = new NotlarAdapter(this,notlarArrayList);
 
