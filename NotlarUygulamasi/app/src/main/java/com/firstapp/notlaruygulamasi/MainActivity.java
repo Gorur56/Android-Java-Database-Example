@@ -1,5 +1,6 @@
 package com.firstapp.notlaruygulamasi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -65,8 +66,19 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(MainActivity.this, NotKayitActivity.class));
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        //BAck tuşuna basınca ana sayfadaysa uygulamadan  çık.
+        //İki sınıftanda ama sayfaya yönlendirdiğimiz için, back tuşuna basınca ana sayfadan ana sayfaya geçiz yapıyordu.
+
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }

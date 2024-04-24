@@ -1,6 +1,7 @@
 package com.firstapp.notlaruygulamasi;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +33,7 @@ public class NotlarAdapter extends RecyclerView.Adapter<NotlarAdapter.CardTasari
 
     @Override
     public void onBindViewHolder(@NonNull CardTasarimTutucu holder, int position) {
-        Notlar not = notlarList.get(position);
+        final Notlar not = notlarList.get(position);
 
         //holder nesnesi ile CardTasarimTutucu 'nun nesnelerine erişebiliriz.
         holder.textViewDers.setText(not.getDers_adi());
@@ -43,6 +44,9 @@ public class NotlarAdapter extends RecyclerView.Adapter<NotlarAdapter.CardTasari
         holder.not_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(mContext,DetayActivity.class);
+                intent.putExtra("nesne",not);
+                mContext.startActivity(intent);
 
             }
         });
