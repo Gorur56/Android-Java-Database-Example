@@ -65,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
 
         notlarArrayList = new NotlarDao().tumNotlar(vt);
 
+        double toplam = 0.0;
+
+        for (Notlar n: notlarArrayList)
+        {
+            toplam = toplam + (n.getNot1()+n.getNot2())/2;
+        }
+        toolbar.setSubtitle("Ortalama: "+(toplam/notlarArrayList.size()));
+
         adapter = new NotlarAdapter(this,notlarArrayList);
 
         rv.setAdapter(adapter);
