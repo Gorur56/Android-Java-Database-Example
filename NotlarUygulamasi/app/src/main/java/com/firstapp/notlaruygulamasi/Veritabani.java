@@ -17,8 +17,8 @@ public class Veritabani extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE \"notlar\" (\n" +
                 "\t\"not_id\"\tINTEGER,\n" +
                 "\t\"ders_adi\"\tTEXT,\n" +
-                "\t\"Not1\"\tINTEGER,\n" +
-                "\t\"Not2\"\tINTEGER,\n" +
+                "\t\"not1\"\tINTEGER,\n" +
+                "\t\"not2\"\tINTEGER,\n" +
                 "\tPRIMARY KEY(\"not_id\" AUTOINCREMENT)\n" +
                 ");");
     }
