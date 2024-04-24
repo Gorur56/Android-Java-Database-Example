@@ -1,6 +1,6 @@
 # NOTLAR UYGULAMASI
 
-Uygulamamız bir öürencinin ders isimlerini ve notlarını eklememizi, güncellememizi ve silmemmizi sağlıyor.
+Uygulamamız bir öğrencinin ders isimlerini ve notlarını eklememizi, güncellememizi ve silmemmizi sağlıyor.
 
 ### 1. EKRAN 
 Recycle 'a eklenmiş derslerin listesi.
