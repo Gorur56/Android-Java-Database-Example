@@ -8,9 +8,9 @@ Recycle 'a eklenmiş derslerin listesi.
 ![image](https://github.com/Gorur56/Android-Java-Database-Example/assets/54911292/53180edf-2123-456c-ba48-4106cc4dc0b4)
 
 ### 2. EKRAN
-FAB butonuna bastığımızda ders kaydı yapabileceğız ekran.
+FAB butonuna bastığımızda ders kaydı yapabileceğimiz ekran.
 
-![image](https://github.com/Gorur56/Android-Java-Database-Example/assets/54911292/d8f52153-3bae-4b42-bb58-f3eb27219cf5)
+![image](https://github.com/Gorur56/Android-Java-Database-Example/assets/54911292/e5404d29-d159-4348-beae-bbcaa69bdd80)
 
 ### 3. EKRAN
 Eklenen ders
